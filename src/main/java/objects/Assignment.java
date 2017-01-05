@@ -1,5 +1,8 @@
 package objects;
 
+import org.json.JSONObject;
+import utils.JSONParser;
+
 import java.io.Serializable;
 import java.util.Calendar;
 import java.util.Random;
@@ -135,5 +138,13 @@ public class Assignment implements Serializable {
 
     public long getDate(){
         return this.date;
+    }
+    
+    /**
+     * Generates a JSONObject from this assignment
+     * @return JSONObject of this assignment
+     */
+    public JSONObject toJson(){
+        return JSONParser.assignmentToJSON(this);
     }
 }
